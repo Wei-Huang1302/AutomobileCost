@@ -5,8 +5,69 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutomobileCost"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Background="AliceBlue"
+        Title="Automobile cost" Height="450" Width="800">
     <Grid>
-        
+        <!--Divide the form to size of 3X7-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <!--Optional background picture change-->
+        <!--<Grid.Background>
+            <ImageBrush ImageSource="CustomYellow.png" Stretch="Fill"/>
+        </Grid.Background>-->
+        <!--Create labels for showing titles for different paying categories-->
+        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Content="Automobile Costs Calculator" FontSize="25" FontFamily="TimesNewRoman"
+               FontWeight="Bold" Margin="9" />
+        <Label Grid.Row="1" Grid.Column="0" Content="Monthly Loan Cost" FontSize="17" FontFamily="TimesNewRoman" FontWeight="Bold" 
+               HorizontalContentAlignment="Center" />
+        <Label Grid.Row="1" Grid.Column="1" Content="Monthly Insurance Cost" FontSize="17" FontFamily="TimesNewRoman" FontWeight="Bold" 
+               HorizontalAlignment="Center" />
+        <Label Grid.Row="1" Grid.Column="2" Content="Monthly Gas Cost" FontSize="17" FontFamily="TimesNewRoman" FontWeight="Bold" 
+               HorizontalAlignment="Center" />
+        <Label Grid.Row="3" Grid.Column="0" Content=" Monthly Oil Cost" FontSize="17" FontFamily="TImesNewRoman" FontWeight="Bold" 
+               HorizontalAlignment="Center" />
+        <Label Grid.Row="3" Grid.Column="1" Content="Monthly Tires Cost" FontSize="17" FontFamily="TimesNewRoman" FontWeight="Bold" 
+               HorizontalAlignment="Center" />
+        <Label Grid.Row="3" Grid.Column="2" Content="Monthly Maintenance Cost" FontSize="17" FontFamily="TimesNewRoman" FontWeight="Bold" 
+               HorizontalAlignment="Center" />
+        <Label Grid.Row="5" Grid.Column="0" Content="Total Monthly Cost" FontSize="17" FontFamily="TimesNewRoman" FontWeight="Bold" 
+               HorizontalAlignment="Center" />
+        <Label Grid.Row="5" Grid.Column="2" Content="Total Annual Cost" FontSize="17" FontFamily="TimesNewRoman" FontWeight="Bold" 
+               HorizontalAlignment="Center" />
+        <Label Grid.Row="6" Grid.Column="0" Name="ToMonCst" FontSize="55" FontFamily="TimesNewRoman" FontWeight="Bold" 
+               HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="5" />
+        <Label Grid.Row="6" Grid.Column="2" Name="ToYrCst" FontSize="55" FontFamily="TimesNewRoman" FontWeight="Bold" 
+               HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="5" />
+        <!-- Create textboxes for users to enter their payments for each category-->
+        <TextBox Grid.Row="2" Grid.Column="0" Name="LoanCst" FontSize="32" FontFamily="TimesNewRoman" HorizontalContentAlignment="Center"
+                 Margin="5" BorderBrush="Black" BorderThickness="4" />
+        <TextBox Grid.Row="2" Grid.Column="1" Name="InsuCst" FontSize="32" FontFamily="TimesNewRoman" HorizontalContentAlignment="Center"
+                 Margin="5" BorderBrush="Black" BorderThickness="4" />
+        <TextBox Grid.Row="2" Grid.Column="2" Name="GasCst" FontSize="32" FontFamily="TImesNewRoman" HorizontalContentAlignment="Center" 
+                 Margin="5" BorderBrush="Black" BorderThickness="4" />
+        <TextBox Grid.Row="4" Grid.Column="0" Name="OilCst" FontSize="32" FontFamily="TimesNewRoman" HorizontalContentAlignment="Center" 
+                 Margin="5" BorderBrush="Black" BorderThickness="4" />
+        <TextBox Grid.Row="4" Grid.Column="1" Name="TireCst" FontSize="32" FontFamily="TImesNewRoman" HorizontalContentAlignment="Center" 
+                 Margin="5" BorderBrush="Black" BorderThickness="4" />
+        <TextBox Grid.Row="4" Grid.Column="2" Name="MtnCst" FontSize="32" FontFamily="TimesNewRoman" HorizontalContentAlignment="Center" 
+                 Margin="5" BorderBrush="Black" BorderThickness="4" />
+        <!-- Create two buttons for users to ether calculate their costs or reset the calculator-->
+        <Button Grid.Row="7" Grid.Column="0" Name="CalPymt" Content="Calculate Your Auto Cost" FontSize="18" FontFamily="TImesNewRoman" FontWeight="Bold" 
+                HorizontalAlignment="Center" Click="CalPymt_Click" Background="DodgerBlue" Foreground="White" BorderBrush="Black"  BorderThickness="4" />
+        <Button Grid.Row="7" Grid.Column="2" Name="ReSet" Content="Reset Calculator" FontSize="18" FontFamily="TImesNewRoman" FontWeight="Bold" 
+                HorizontalAlignment="Center" Click="ReSet_Click" Background="DodgerBlue" Foreground="White" BorderBrush="Black" BorderThickness="4" />
     </Grid>
 </Window>
