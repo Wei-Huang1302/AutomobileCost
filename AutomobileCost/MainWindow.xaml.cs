@@ -58,20 +58,13 @@ namespace AutomobileCost
             ///Extract values from textboxes, and remind user to input valid currency amount if any entry is not valid
             try
             {
-                //convert textinputs to strings
-                string LoanCostConvert = LoanCst.Text;
-                string InsuCostConvert = InsuCst.Text;
-                string GasCostConvert = GasCst.Text;
-                string OilCostConvert = OilCst.Text;
-                string TiresCostConvert = TireCst.Text;
-                string MaintCostCovert = MtnCst.Text;
                 //convert to decimal
-                decimal LoanPerMth = decimal.Parse(LoanCostConvert);
-                decimal InsurancePerMth = decimal.Parse(InsuCostConvert);
-                decimal GasPerMth = decimal.Parse(GasCostConvert);
-                decimal OilPerMth = decimal.Parse(OilCostConvert);
-                decimal TiresPerMth = decimal.Parse(TiresCostConvert);
-                decimal MtnPerMth = decimal.Parse(MaintCostCovert);
+                decimal LoanPerMth = decimal.Parse(LoanCst.Text);
+                decimal InsurancePerMth = decimal.Parse(InsuCst.Text);
+                decimal GasPerMth = decimal.Parse(GasCst.Text);
+                decimal OilPerMth = decimal.Parse(OilCst.Text);
+                decimal TiresPerMth = decimal.Parse(TireCst.Text);
+                decimal MtnPerMth = decimal.Parse(MtnCst.Text);
                 //calculate monthly and yearly payments
                 ToMonCst.Content = LoanPerMth + InsurancePerMth + GasPerMth + OilPerMth + TiresPerMth + MtnPerMth;
                 ToYrCst.Content = (LoanPerMth + InsurancePerMth + GasPerMth + OilPerMth + TiresPerMth + MtnPerMth) * MonthPerYear;
